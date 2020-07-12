@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Hello</h1>
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/searches/new">search menu</a></li>
+        </ul>
+    </header>
+    <main>
+        <section>
+            <% renderArr.forEach(elem =>{ %>
+                <h2>
+                    <%= elem.title %>
+                </h2>
+                <h3>
+                    <%= elem.author %>
+                </h3>
+                <img src="<%= elem.img_url %>" onerror="standby()" >
+                <p>
+                    <%= elem.description %>
+                </p>
+
+
+
+
+           <% }) %>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="/public/js/app.js"></script>
+</body>
+</html>
