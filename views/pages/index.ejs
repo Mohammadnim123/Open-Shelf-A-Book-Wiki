@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
     <title>home page</title>
 </head>
 <body>
@@ -13,7 +14,21 @@
             <li><a href="/searches/new">search menu</a></li>
         </ul>
     </header>
-    <main></main>
+    <main>
+        <p>you have now : <%= results.length %> books</p>
+        <section>
+            <% results.forEach(elem =>{ %>
+                <div>
+                <img src="<%= elem.image_url %>" >
+                <h2><%= elem.title %> </h2>
+                <h3><%= elem.author %></h3>
+                
+                <a href="/books/<%=elem.id%>">View Details</a>
+            </div>
+
+                <% }); %>
+        </section>
+    </main>
     <footer></footer>
 </body>
 </html>

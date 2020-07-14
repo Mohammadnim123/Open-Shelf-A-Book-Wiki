@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
     <header>
@@ -16,17 +17,33 @@
     <main>
         <section>
             <% renderArr.forEach(elem =>{ %>
+               <div>
                 <h2>
                     <%= elem.title %>
                 </h2>
                 <h3>
                     <%= elem.author %>
                 </h3>
-                <img src="<%= elem.img_url %>" onerror="standby()" >
+                <img src="<%= elem.image_url %>" >
                 <p>
                     <%= elem.description %>
                 </p>
-
+                <p>
+                   ISBN: <%= elem.isbn %>
+                </p>
+            </div>
+            <button class="select-button">Select this Book</button>
+            <form action="/books" method="POST" class="dataBaseForm">
+                <input type="text" id="title" name="title" value="<%= elem.title %>"><br>
+                <input type="text" id="author" name="author" value="<%= elem.author %>"><br>
+                <input type="text" id="isbn" name="isbn" value="<%= elem.isbn %>"><br>
+                <input type="text" id="image_url" name="image_url" value="<%= elem.image_url %>"><br>
+                <textarea id="description" name="description"><%= elem.description %></textarea>
+                <p>add the book shelf for this element :</p><br>
+                <input type="text" id="bookshelf" name="bookshelf"><br>
+                <button type="submit">Add Database</button>
+                
+            </form>
 
 
 
@@ -34,6 +51,6 @@
         </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="/public/js/app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
