@@ -1,8 +1,60 @@
-img{
-    width: 200px;
-    height: 300px;
+body{
+    /* width: 100%; */
+    text-align: center;
 }
 
-/* .dataBaseForm{
-    visibility: hidden;
-} */
+img{
+    width: 50%;
+    height: 70%;
+}
+
+header{
+    background-color: black;
+    width: 100%;
+    color: white;
+    margin: -1.5% 0 0 0;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+header ul li{
+    display: inline-block;
+    margin: 2%;
+    
+}
+
+header ul li:hover{
+    background-color: gray;
+    
+}
+
+header ul li a:hover{
+    color: black;
+}
+
+main{
+    background-color: gray;
+    margin-top: -1.2%;
+}
+
+h1{
+    padding-top: 2%;
+}
+
+div{
+    padding: 3% 0 3% 0;
+    background-color: rgb(216, 216, 216);
+   width: 50%;
+   margin-top: 1%;
+   margin-bottom: 2%;
+
+}
+
+section{
+    margin: 0 0 0 35%;
+    
+}

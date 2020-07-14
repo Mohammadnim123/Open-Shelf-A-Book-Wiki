@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/detail.css">
 
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <h1>Details!</h1>
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/searches/new">search menu</a></li>
-        </ul>
+        <%- include('../layout/header'); %>
     </header>
     <main>
         <section>
-            <img src='<%= singleBook.image_url %>' >
-                <h2><%= singleBook.title %> </h2>
-                <h3><%= singleBook.author %></h3>
-                <p><%= singleBook.description %></p>
-                <p><%= singleBook.isbn %></p>
-                <p><%= singleBook.bookshelf %></p>
+            <img src='<%= singleBook.image_url %>'>
+            <h2><%= singleBook.title %> </h2>
+            <h3><%= singleBook.author %></h3>
+            <p><%= singleBook.description %></p>
+            <p><%= singleBook.isbn %></p>
+            <p><%= singleBook.bookshelf %></p>
+            
         </section>
+        <form action="/deletebook/<%= singleBook.id %>?_method=delete" method="post">
+        <button class="delete-button">Click Me To Delete</button><br>
+    </form>
+        <button class="select-button">Click Me To Update</button>
+        <form class="dataBaseForm" action="/updatebook/<%= singleBook.id %>?_method=put" method="post">
+            <input type="text" id="title" name="title" value="<%= singleBook.title %>"><br>
+            <input type="text" id="author" name="author" value="<%= singleBook.author %>"><br>
+            <input type="text" id="isbn" name="isbn" value="<%= singleBook.isbn %>"><br>
+            <input type="text" id="image_url" name="image_url" value="<%= singleBook.image_url %>"><br>
+            <textarea id="description" name="description"><%= singleBook.description %></textarea><br>
+           
+            <input type="text" id="bookshelf" name="bookshelf" value="<%= singleBook.bookshelf %>"><br>
+            <button type="submit">Update Book</button>
+        </form>
+
     </main>
 
-    
-    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/app.js"></script>
 </body>
+
 </html>

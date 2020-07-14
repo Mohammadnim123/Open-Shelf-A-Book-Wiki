@@ -1,0 +1,12 @@
+header , footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+
+main{
+    background-color: rgb(190, 190, 190);
+    text-align: center;
+    padding: 5%;
+}

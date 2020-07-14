@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/home.css">
     <title>home page</title>
 </head>
 <body>
     <header>
-        <h1>Hello World!</h1>
-        <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/searches/new">search menu</a></li>
-        </ul>
+        <%- include('./layout/header'); %>
     </header>
+    <p>you have now : <%= results.length %> books</p>
     <main>
-        <p>you have now : <%= results.length %> books</p>
         <section>
             <% results.forEach(elem =>{ %>
                 <div>
